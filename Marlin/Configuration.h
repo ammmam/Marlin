@@ -1280,10 +1280,20 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+
+//AMMMA 05-OCT-22 - Bltouch - comment below line, BLTOCUH Connected to its own port
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
+//End of Comment
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+
+//AMMMA 05-OCT-22 - Bltouch - uncomment below line, BLTOCUH Connected to its own port
+//Uncomment Below line
+//will be execlusive for Probe to define z min AMCHK
+#define USE_PROBE_FOR_Z_HOMING
+//REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
+//End of Comment
 
 /**
  * Z_MIN_PROBE_PIN
