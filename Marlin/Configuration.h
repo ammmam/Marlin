@@ -1913,7 +1913,12 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+
+//AMMMA 06-OCT-2022 Uncomment below line
+#define RESTORE_LEVELING_AFTER_G28
+//REF https://all3dp.com/2/how-to-set-up-marlin-for-auto-bed-leveling/
+//End of Comment
+
 //#define ENABLE_LEVELING_AFTER_G28
 
 /**
@@ -1950,6 +1955,7 @@
   // Gradually reduce leveling correction until a set height is reached,
   // at which point movement will be level to the machine's XY plane.
   // The height can be set with M420 Z<height>
+  
   #define ENABLE_LEVELING_FADE_HEIGHT
   #if ENABLED(ENABLE_LEVELING_FADE_HEIGHT)
     #define DEFAULT_LEVELING_FADE_HEIGHT 10.0 // (mm) Default fade height.
