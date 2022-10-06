@@ -904,9 +904,9 @@
   // Safety: The probe needs time to recognize the command.
   //         Minimum command delay (ms). Enable and increase if needed.
   
-  //AMMMA 06-OCT-2022 - Uncomment below line for BLTOUCH
-  #define BLTOUCH_DELAY 500
-  //REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
+  //AMMMA 06-OCT-2022 - Uncomment below line for BLTOUCH and change the value from 500 to 200
+  #define BLTOUCH_DELAY 200
+  //REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
   //End of Comment
 
 
@@ -2056,8 +2056,13 @@
 #define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
-  //#define BABYSTEP_WITHOUT_HOMING
-  //#define BABYSTEP_ALWAYS_AVAILABLE       // Allow babystepping at all times (not just during movement).
+  
+  //AMMMA 06-OCT-2022 Remove Comment from below two lines
+  #define BABYSTEP_WITHOUT_HOMING
+  #define BABYSTEP_ALWAYS_AVAILABLE       // Allow babystepping at all times (not just during movement).
+  //https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
+  //End of Comment
+
   //#define BABYSTEP_XY                     // Also enable X/Y Babystepping. Not supported on DELTA!
   #define BABYSTEP_INVERT_Z false           // Change if Z babysteps should go the other way
   //#define BABYSTEP_MILLIMETER_UNITS       // Specify BABYSTEP_MULTIPLICATOR_(XY|Z) in mm instead of micro-steps
@@ -2189,9 +2194,18 @@
  * Repeatedly attempt G29 leveling until it succeeds.
  * Stop after G29_MAX_RETRIES attempts.
  */
-//#define G29_RETRY_AND_RECOVER
+
+//AMMMA 06-OCT-22 Uncomment below line
+#define G29_RETRY_AND_RECOVER
+//REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
+//End of Comment
+
 #if ENABLED(G29_RETRY_AND_RECOVER)
-  #define G29_MAX_RETRIES 3
+  //AMMMA 01-OCT-22 - Changing below value from 3 to 4
+  #define G29_MAX_RETRIES 4
+  //REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
+  //End of Comment
+  
   #define G29_HALT_ON_FAILURE
   /**
    * Specify the GCODE commands that will be executed when leveling succeeds,
@@ -3215,7 +3229,11 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+  
+  //AMMMA 01-OCT-22 - Uncomment below line
+  #define MONITOR_DRIVER_STATUS
+  //REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
+  //End of Comment
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -3232,7 +3250,12 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  //#define HYBRID_THRESHOLD
+
+  //AMMMA 06-OCT-22 Uncomment below line
+  #define HYBRID_THRESHOLD
+  //REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
+  //End of Comment 
+  
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100

@@ -733,7 +733,13 @@
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  * @section bed temp
  */
-//#define PIDTEMPBED
+
+
+//AMMMA 06-OCT-22 Uncomment below line
+#define PIDTEMPBED
+//REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration-h-marlin-2-setup-part-2/
+//End of Comment
+
 
 //#define BED_LIMIT_SWITCHING
 
@@ -1507,6 +1513,7 @@
 //AMMMA 06-OCT-2022 - Modifying the below figure to match the mount
 //#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
 #define NOZZLE_TO_PROBE_OFFSET { -42, -10, 0 }
+//REF https://www.thingiverse.com/thing:3003725
 //REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
 //End of comment
 
@@ -1917,6 +1924,7 @@
 //AMMMA 06-OCT-2022 Uncomment below line
 #define RESTORE_LEVELING_AFTER_G28
 //REF https://all3dp.com/2/how-to-set-up-marlin-for-auto-bed-leveling/
+//REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration-h-marlin-2-setup-part-2/
 //End of Comment
 
 //#define ENABLE_LEVELING_AFTER_G28
@@ -1986,7 +1994,12 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 5
+
+  //AMMMA 01-OCT-22 - Adjust the points from 5 to 9 in next line
+  #define GRID_MAX_POINTS_X 9
+  //REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration-h-marlin-2-setup-part-2/
+  //End Of Comment
+  
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
