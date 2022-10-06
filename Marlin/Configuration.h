@@ -1290,7 +1290,7 @@
 
 //AMMMA 05-OCT-22 - Bltouch - uncomment below line, BLTOCUH Connected to its own port
 //Uncomment Below line
-//will be execlusive for Probe to define z min AMCHK
+//will be execlusive for Probe to define z min
 #define USE_PROBE_FOR_Z_HOMING
 //REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
 //End of Comment
@@ -1347,7 +1347,11 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+
+//AMMMA 06-OCT-2022 - Uncommenting below line for adding BLTOUCH
+#define BLTOUCH
+//REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
+//End of Comment
 
 /**
  * MagLev V4 probe by MDD
@@ -1499,7 +1503,12 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+
+//AMMMA 06-OCT-2022 - Modifying the below figure to match the mount
+//#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -42, -10, 0 }
+//REF https://3dprintscape.com/bltouch-on-skr-mini-install-guide/
+//End of comment
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1891,7 +1900,13 @@
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-#define MESH_BED_LEVELING
+
+//AMMMA -06-OCT-22 - Bltouch Sensor - Enabling Bilinear
+#define AUTO_BED_LEVELING_BILINEAR
+//Commenting below line
+//#define MESH_BED_LEVELING
+//https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration-h-marlin-2-setup-part-2/
+//End of Comment
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable one of
@@ -2102,7 +2117,11 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+
+//AMMMA 06-OCT-22 - Uncomment below line
+#define Z_SAFE_HOMING
+//REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration-h-marlin-2-setup-part-2/
+//End of Comment
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
