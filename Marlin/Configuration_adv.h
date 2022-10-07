@@ -3252,7 +3252,8 @@
    */
 
   //AMMMA 06-OCT-22 Uncomment below line
-  #define HYBRID_THRESHOLD
+  //AMMMA 08-OCT-22 Commenting back - Seems noisy and may affect quality
+  //#define HYBRID_THRESHOLD
   //REF https://www.makenprint.uk/3d-printing/3d-printing-guides/skr-mini-e3-v2-configuration_adv-h-marlin-2-setup-part-3/
   //End of Comment 
   
