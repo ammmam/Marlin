@@ -2686,7 +2686,11 @@
   //#define PAUSE_REHEAT_FAST_RESUME              // Reduce number of waits by not prompting again post-timeout before continuing.
 
   #define PARK_HEAD_ON_PAUSE                    // Park the nozzle during pause and filament change.
-  #define HOME_BEFORE_FILAMENT_CHANGE           // If needed, home before parking for filament change
+  
+  //AMMMA 15-OCT-22 Comment below line to prevent hotend crash into print incase of filement runout
+  //#define HOME_BEFORE_FILAMENT_CHANGE           // If needed, home before parking for filament change
+  //REF https://www.makenprint.uk/3d-printing/3d-printing-reviews/3d-printer-accessory-reviews/btt-smart-filament-sensor-guide/
+  //End of Comment
 
   #define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
   //#define FILAMENT_UNLOAD_ALL_EXTRUDERS         // Allow M702 to unload all extruders above a minimum target temp (as set by M302)
